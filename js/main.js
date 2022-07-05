@@ -149,3 +149,39 @@ function getMathResult(num, times) {
     }
     console.log(result);
 }
+
+// __________________________________________________________
+
+// Место для первой задачи
+function calculateVolumeAndArea(a) {
+    if (typeof(a) === 'number' && a >= 0 && a % 1 === 0) {
+        return `Объем куба: ${a*a*a}, площадь всей поверхности: ${(a*a)*6}`;
+    } else return 'При вычислении произошла ошибка';
+}
+
+console.log(calculateVolumeAndArea(5.2));
+
+// Место для второй задачи
+function getCoupeNumber(place) {
+    if (place === 0 || place > 36) {
+        return "Таких мест в вагоне не существует";
+    } else if (typeof(place) === 'number' && place >= 0 && place % 1 === 0) {
+        return Math.ceil(place / 4);
+    } else return "Ошибка. Проверьте правильность введенного номера места";
+}
+
+
+console.log(getCoupeNumber(0.22));
+
+
+// __________________________________________________________
+
+// Место для первой задачи
+function getTimeFromMinutes() {
+
+}
+
+// Место для второй задачи
+function findMaxNumber() {
+
+}
