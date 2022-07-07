@@ -177,11 +177,57 @@ console.log(getCoupeNumber(0.22));
 // __________________________________________________________
 
 // Место для первой задачи
-function getTimeFromMinutes() {
+function getTimeFromMinutes(minute) {
+    let hour = '';
+    if (typeof(minute) === 'number' && minute >= 0 && minute % 1 === 0) {
 
+        switch (Math.floor(minute / 60)) {
+            case 1:
+                hour = ' час';
+                break;
+            case 2:
+            case 3:
+            case 4:
+                hour = ' часа';
+                break;
+            default:
+                hour = ' часов';
+                break;
+        }
+        return 'Это ' + Math.floor(minute / 60) + hour + ' и ' + minute % 60 + ' минут';
+    } else return 'Ошибка, проверьте данные';
 }
+
+console.log(getTimeFromMinutes(50));
 
 // Место для второй задачи
-function findMaxNumber() {
-
+function findMaxNumber(a, b, c, d) {
+    if (typeof(a, b, c, d) === 'number')
+        return Math.max(a, b, c, d);
+    else return 0;
 }
+
+// _________________________________________________
+
+// Фибаначчи
+
+function fib(num) {
+    if (typeof(num) != 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
+    } else if (num == 1) {
+        return "0";
+    } else {
+        let prev0 = 0;
+        let prev1 = 1;
+        let result = prev0 + ' ' + prev1;
+        for (let i = 1; i <= num - 2; i++) {
+            let nextNum = prev0 + prev1;
+            result += ' ' + nextNum;
+            prev0 = prev1;
+            prev1 = nextNum;
+        }
+        return result;
+    }
+}
+
+console.log(fib(3));
