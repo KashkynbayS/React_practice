@@ -231,3 +231,103 @@ function fib(num) {
 }
 
 console.log(fib(3));
+
+
+// ___________________________________________________
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const { languages } = plan.skills;
+        let str = `Мне ${plan.age} и я владею языками: `;
+
+        languages.forEach(function(lang) {
+            str += lang.toUpperCase() + ' ';
+        });
+        return str;
+    }
+};
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+
+function showExperience(plan) {
+    const { exp } = plan.skills;
+    return exp;
+}
+
+console.log(showExperience(personalPlanPeter));
+
+
+function showProgrammingLangs(plan) {
+    const { programmingLangs } = plan.skills;
+    let result = '';
+    for (const key in programmingLangs) {
+        result += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+    return result;
+}
+
+
+console.log(showProgrammingLangs(personalPlanPeter));
+
+
+// _________________________________________________
+
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    let str = '';
+    arr.length === 0 ? str = 'Семья пуста' : str = 'Семья состоит из: ';
+    arr.forEach(member => {
+        str += `${member} `;
+    });
+    return str;
+}
+
+console.log(showFamily(family));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(city => {
+        console.log(city.toLowerCase());
+    })
+}
+
+standardizeStrings(favoriteCities);
+
+// _________________________________________________
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof(str) === 'string') {
+        const arr = str.split('');
+        arr.reverse();
+        let result = '';
+        for (const key in arr) {
+            result += arr[key];
+        }
+        return result;
+    } else return "Ошибка!";
+}
+
+console.log(reverse(someString));
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+
+}
