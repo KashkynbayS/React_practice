@@ -329,5 +329,78 @@ const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr) {
-
+    let str = '';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+    arr.forEach(function(curr) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+    return str;
 }
+
+console.log(availableCurr(['UAH', 'RUB', 'CNY'], 'CNY'));
+
+
+// _________________________________________________
+// (*) Продвинутая задача на работу с объектами и массивами
+
+const shoppingMallData = {
+    shops: [{
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+}
+
+function isBudgetEnough(data) {
+    let { shops, height, moneyPer1m3, budget } = data;
+    let square = 0;
+    let volume = 0;
+    shops.forEach(e => {
+        square += e.width * e.length;
+    });
+    volume = square * height;
+    let moneyForHeating = volume * moneyPer1m3;
+    if (moneyForHeating > budget) {
+        return 'Бюджета недостаточно';
+    }
+    return moneyForHeating > budget ? 'Бюджета недостаточно' : 'Бюджета достаточно';
+}
+
+// ___________________________________________________
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+
+function sortStudentsByGroups(arr) {
+    arr.sort();
+    for (let i = 0; i < arr.length; i++) {
+
+        // arr[i] = new Array(3);
+
+        if ((i + 1) % 3 != 0) {
+
+            arr[i].push();
+
+        } else arr[i] = new Array();
+
+    }
+    console.log(arr);
+}
+
+sortStudentsByGroups(students);
