@@ -385,22 +385,29 @@ function isBudgetEnough(data) {
 
 // ___________________________________________________
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Ersultan', 'Sultan', 'Naruto'];
 
 function sortStudentsByGroups(arr) {
     arr.sort();
-    for (let i = 0; i < arr.length; i++) {
+    let newArr = [];
+    let str = 'Оставшиеся студенты: ';
+    let strStud = '';
 
-        // arr[i] = new Array(3);
-
-        if ((i + 1) % 3 != 0) {
-
-            arr[i].push();
-
-        } else arr[i] = new Array();
-
+    for (let i = 0; i < arr.length; i += 3) {
+        if (arr.slice(i, i + 3).length != 3) {
+            arr.slice(i, i + 3).forEach(e => {
+                strStud += `${e}, `;
+            });
+            break;
+        }
+        newArr.push(arr.slice(i, i + 3));
     }
-    console.log(arr);
+    if (strStud.length !== 0) {
+        str += strStud.slice(0, -2);
+    } else str += '-';
+
+    newArr.push(str);
+    console.log(newArr);
 }
 
 sortStudentsByGroups(students);
