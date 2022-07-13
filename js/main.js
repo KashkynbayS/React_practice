@@ -1,5 +1,5 @@
 let storeName = "Azalia";
-
+// Privet 
 const storeDescription = {
     budget: 10000,
     employees: ['Zhemis', 'Asel', 'Tolkyn'],
